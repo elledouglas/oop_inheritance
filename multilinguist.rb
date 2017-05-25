@@ -1,5 +1,6 @@
 require 'httparty'
 require 'json'
+require 'byebug'
 
 
 # This class represents a world traveller who knows what languages are spoken in each country
@@ -53,3 +54,75 @@ class Multilinguist
   end
 end
 
+class MathGenius < Multilinguist
+
+  def initialize
+  end
+
+  def list_of_number(array = [])
+    sum = 0
+    array.each {|n| sum += n}
+    return sum
+  end
+
+end
+
+kathleen = MathGenius.new
+puts kathleen.list_of_number([6,6,6,6,6,6])
+kathleen = Multilinguist.new
+puts kathleen.travel_to("India")
+puts kathleen.travel_to("Italy")
+
+#Quote Collector
+class QuoteCollector < Multilinguist
+  attr_accessor :collection
+
+def initialize
+  @collection = []
+end
+
+  def collection_of_quotes(array)
+
+    array.each do |quote|
+      #byebug
+      @collection << quote
+      puts @collection
+
+
+    end
+  end
+
+  def search_quote(quote)
+    random_quote = @collection.sample
+    puts random_quote
+  end
+
+end
+sam = QuoteCollector.new
+sam.collection_of_quotes(["once upon a time", "Happily ever after", "once upon a time", "Happily ever after"])
+sam.search_quote("once upon a time")
+#am.collection_of_quotes(["once upon a time", "Happily ever after", "once upon a time", "Happily ever after"])
+
+#exercise 3
+attr_reader :bodies
+
+class System
+@@bodies = bodies[]
+
+def add(bodypart)
+  @@bodies << bodypart
+end
+
+def total_mess
+
+
+end
+
+
+
+
+
+
+
+
+end
