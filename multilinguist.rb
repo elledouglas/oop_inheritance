@@ -114,15 +114,37 @@ def add(bodypart)
 end
 
 def total_mess
+  array.each do |bodypart|
+    @bodies << bodypart
+    puts @bodies
+end
 
+class Body
+attr_reader :name, :bodies
+
+def initialize
+  @@name = name
+  @@mass = mass
+end
 
 end
 
+class Planet < Body
 
 
+  def day
+    "you have rotated 24hours"
+  end
 
+def year
+  "its has been 352 days"
+end
 
+end
 
+class Star < Body
 
+end
 
+class Moon < Body
 end
